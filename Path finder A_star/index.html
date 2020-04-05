@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Astar path finder</title>
+	<style>
+		label{width:70px;}
+        #obstacle{
+            color:#ffffff;
+            background: #c4eeb7;
+        }
+        #tile{
+            color:#ffffff;
+            background: #455462;
+        }
+        #start{
+            color:#ffffff;
+            background: #eeb76e;
+        }
+        #end{
+            color:#ffffff;
+            background: #fb294b;
+        }
+	</style>
+</head>
+<body>
+	<p>
+        1. pick the grid size (height,width) ex : <strong>5,30</strong> with a comma seperated then press Create <mark>(pressing Create again will generate new obstacles)</mark><br>
+		2. Random obstacles will be generated at first<br>
+        2. <strong>Click</strong> on the tiles manually to make costume obstacles <mark>(All the random obstacles will be deleted)</mark><br>
+		3. pick the position (x,y),(col,row) ex : <strong>20,1</strong> with a comma seperated <mark>then press submit</mark><br>
+        4. pick the goal position (x,y),(col,row) ex : <strong>2,1</strong> with a comma seperated  <mark>then press submit</mark> <br>
+        <center> <span id = "obstacle"> OBSTACLES</span> - 
+            <span id = "tile"> TILES  </span> -
+            <span id = "start"> START POSITION  </span> - 
+            <span id = "end"> GOAL POSITION </span>
+        </center>
+        
+
+    </p>
+    <p>	<label>Grid size : </label>
+        <input id="grid" type="text" placeholder="Height,Width" >
+        <button type="button" class="btn btn-outline-primary" id = "gridButton" onclick="drawGrid()"> CREATE</button>
+    </p>
+    <p>
+		<label>Position : </label>
+        <input id = "position" type="text" placeholder="x,y" >
+        <button  type="button" class="btn btn-outline-success" id = "positionButton" onclick="robotPosition()"> Submit</button>
+    </p>
+    <p>	
+		<label>Goal : </label>
+        <input id = "goal" type="text" placeholder="x,y">
+        <button type="button" class="btn btn-outline-success"  id = "goalButton" onclick="goalPosition()" > Submit</button>
+    </p>
+
+</body>
+<canvas id="canvas" ></canvas>
+
+<script src="index.js"></script>
